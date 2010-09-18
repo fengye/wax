@@ -27,9 +27,9 @@ MyProject
 ----cocos2d-iphone
 --wax
 
-4. Reopen your project, Build and Run! You've got lua running on the iPhone!
+5. Reopen your project, Build and Run! You've got lua running on the iPhone!
 
-5. Start editing **wax/data/scripts/MyLayer.lua** to make your app!
+6. Start editing **wax/data/scripts/MyLayer.lua** to make your app!
 
 Why?
 ----
@@ -126,8 +126,11 @@ Debugging
 RapidWax integrated [RemDebug](http://www.keplerproject.org/remdebug/) to enable debugging Lua script in command line.
 
 By default the RemDebug server is already run on your app if you create your app from Wax template. So the remaining part is just to start the command line debugger:
+
 $ cd MyProject/wax/lib/extensions/remdebug
+
 $ lua controller.lua
+
 
 And the debugger will block. As the screen indicates, run your app, and the debugger will break on the first line of your code. You can either set breakpoints by 'set' or just type 'run' to let it go. More information please visit the [RemDebug example](http://www.keplerproject.org/remdebug/example.html).
 
@@ -147,11 +150,17 @@ If you want to get rid of XCode or even Mac OSX for 99% of time, and don't want 
 The basic idea for fast prototyping is to load Lua modules from an dedicated FTP server, via WiFi or other kind of network your device/simulator supports. So this assume you have an LAN network setup(if you don't, which is rare, you can just test on localhost).
 
 Here's how you actually do this(again, assume you create the project from Wax application template):
+
 1. Open an FTP server on your development machine. Details for Mac user is [here](http://www.macinstruct.com/node/152).
+
 2. Put your Lua code inside the FTP directory you can reach. Please make sure they still have /data/scripts/ in the directory hierarchy.
+
 3. On AppDelegate.lua, line 8, you should see something like '--require "customftploader"'. Remove the comment. 
+
 4. You should also modify the customftploader.lua, line 8, to provide your FTP url and user/password(this time the url should omit /data/scripts). What it does is search the FTP server for specific Lua module.
+
 5. Run your application. If you get crashed, the output message should give  out some clue. Most of the time it's the directory hierarchy on FTP server not configured correctly.
+
 6. Close your app and tweak your code on the FTP server. Then re-run your app to see the effect! Your app should reflect what you changed just now.
 
 
