@@ -17,13 +17,26 @@ function init(self)
 	self:addChild(self.player)
 	self:schedule("update:")
 	self.timer = 0;
+	self:setIsTouchEnabled(true)
+	self.rotationCenter = CGPoint(150, 200)
 	return self
+end
+
+function onEnter(self)
+	self.super:onEnter(self)
+	-- this enables targeted touch event(ccTouchBegan:withEvent etc) 
+	CCTouchDispatcher:sharedDispatcher():addTargetedDelegate_priority_swallowsTouches(self, 0, true)
+end
+
+function onExit(self)
+	CCTouchDispatcher:sharedDispatcher():removeDelegate(self)
+	self.super.onExit(self)
 end
 
 function draw(self)
 	self.super:draw(self)
 	-- This shows how to use direct OpenGL ES functions, feel free to remote them.
-	gl.ClearColor(1.0, 1.0, 0.0, 1.0)
+	gl.ClearColor(0.0, 1.0, 0.0, 1.0)
 	gl.Clear("COLOR_BUFFER_BIT")
 end
 
@@ -31,7 +44,28 @@ function update(self, dt)
 	local position = self.player:position()
 	-- Move around the sprite
 	self.timer = self.timer + dt
-	position.x = 150 + math.sin(self.timer) * 100
-	position.y = 200 + math.cos(self.timer) * 100
+	position.x = self.rotationCenter.x + math.sin(self.timer) * 100
+	position.y = self.rotationCenter.y + math.cos(self.timer) * 100
 	self.player:setPosition(position)
+end
+
+function modifyRotationCenter(self, touch)
+	local CGPoint pt = touch:locationInView(touch:view())
+	pt.y = 480 - pt.y
+	self.rotationCenter = pt;
+end
+
+function ccTouchBegan_withEvent(self, touch, event)
+	modifyRotationCenter(self, touch)
+	return true
+end
+
+function ccTouchMoved_withEvent(self, touch, event)
+	modifyRotationCenter(self, touch)
+	return true
+end
+
+function ccTouchEnded_withEvent(self, touch, event)
+	modifyRotationCenter(self, touch)
+	return true
 end
