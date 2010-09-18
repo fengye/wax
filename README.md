@@ -18,14 +18,23 @@ Setup
 3. Open up xcode and create a new **Wax** project, it should be located under the **User Tempates** section.
 
 4. Now you have an Wax(actually RapidWax) project, but still the referenced cocos2d project is unavailable. You need to close the project first and copy the entire /external folder to your new project folder. So your project folder should looks like this:
+
 MyProject
+
 --Classes
+
 --data
+
 ----scripts
+
 ----images
+
 --external
+
 ----cocos2d-iphone
+
 --wax
+
 
 5. Reopen your project, Build and Run! You've got lua running on the iPhone!
 
