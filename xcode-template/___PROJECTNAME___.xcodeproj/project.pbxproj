@@ -762,6 +762,7 @@
 		727FDE1C1244DC9700728DF6 /* MyScene.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = MyScene.lua; sourceTree = "<group>"; };
 		727FDE201244DE5200728DF6 /* fps_images.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = fps_images.png; path = data/images/fps_images.png; sourceTree = "<group>"; };
 		727FDE211244DE5200728DF6 /* grossini.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = grossini.png; path = data/images/grossini.png; sourceTree = "<group>"; };
+		72B2D7101245264E005AEE4B /* CCXNodeUpdateProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCXNodeUpdateProtocol.h; sourceTree = "<group>"; };
 		871830A51208AC72002006FF /* copy-scripts.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = "copy-scripts.sh"; sourceTree = "<group>"; };
 		875F27BB120721D400D00A5D /* wax_gc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = wax_gc.h; sourceTree = "<group>"; };
 		875F27BC120721D400D00A5D /* wax_gc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = wax_gc.m; sourceTree = "<group>"; };
@@ -1011,6 +1012,7 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				72B2D7101245264E005AEE4B /* CCXNodeUpdateProtocol.h */,
 				0482723B1125E152003DFACB /* ProtocolLoader.h */,
 			);
 			path = Classes;

@@ -1,9 +1,8 @@
 //
 //  CCXLayerUpdateProtocol.h
-//  TestRapdWax
+//  RapidWax
 //
-//  Created by Feng Ye on 10-9-18.
-//  Copyright 2010 __MyCompanyName__. All rights reserved.
+//  Created by Ye Feng on 10-9-18.
 //
 
 #import <UIKit/UIKit.h>
