@@ -3,6 +3,11 @@ Wax
 
 Wax is a framework that lets you write iPhone apps in [Lua](http://www.lua.org/about.html). It bridges Objective-C and Lua using the Objective-C runtime. With Wax, anything you can do in Objective-C is **automatically** available in Lua! What are you waiting for, give it a shot!
 
+RapidWax
+===
+
+RapidWax is made possible by Wax and some other Lua open source projects, namely LuaSocket, LuaFilesystem, RemDebug, LuaGL and cocos2d-iphone. They're integrated to make RapidWax more suitable for rapid game prototyping.
+
 Setup
 -----
 
@@ -12,9 +17,19 @@ Setup
 
 3. Open up xcode and create a new **Wax** project, it should be located under the **User Tempates** section.
 
-4. Build and Run! You've got lua running on the iPhone!
+4. Now you have an Wax(actually RapidWax) project, but still the referenced cocos2d project is unavailable. You need to close the project first and copy the entire /external folder to your new project folder. So your project folder should looks like this:
+MyProject
+--Classes
+--data
+----scripts
+----images
+--external
+----cocos2d-iphone
+--wax
 
-5. Start editing **wax/data/scripts/AppDelegate.lua** to make your app!
+4. Reopen your project, Build and Run! You've got lua running on the iPhone!
+
+5. Start editing **wax/data/scripts/MyLayer.lua** to make your app!
 
 Why?
 ----
@@ -145,3 +160,7 @@ Fork it, change it, commit it, push it, send pull request; instant glory!
 The MIT License
 ---------------
 Wax is Copyright (C) 2009 Corey Johnson See the file LICENSE for information of licensing and distribution.
+
+RapidWax is forked from Wax.
+RapidWax is Copyright (C) 2010 Ye Feng.
+See the file LICENSE for information of licensing and distribution.
