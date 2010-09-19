@@ -637,13 +637,18 @@ static int luagl_get(lua_State *L)
   {
   case GL_STENCIL_VALUE_MASK:
   case GL_STENCIL_WRITEMASK:
-  case GL_FRONT_FACE: 
-    // looks like there's still a lot of glGet* not implemented, including GL_FRONT_FACE
     mask = 0;
     glGetIntegerv(e, &mask);
     lua_pushstring(L, luagl_mask2str(mask));
     return 1;
-
+  case GL_FRONT_FACE: 
+    /* looks like there's still a lot of glGet* not implemented, including 
+       GL_FRONT_FACE
+    */
+    glGetIntegerv(e, &mask);
+    lua_pushinteger(L, mask);
+    return 1;
+          
   case GL_DEPTH_RANGE:
   case GL_MAX_VIEWPORT_DIMS:
     size = 2;
