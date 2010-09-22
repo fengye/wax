@@ -104,6 +104,7 @@
 		727FDE1E1244DC9700728DF6 /* MyScene.lua in Resources */ = {isa = PBXBuildFile; fileRef = 727FDE1C1244DC9700728DF6 /* MyScene.lua */; };
 		727FDE221244DE5200728DF6 /* fps_images.png in Resources */ = {isa = PBXBuildFile; fileRef = 727FDE201244DE5200728DF6 /* fps_images.png */; };
 		727FDE231244DE5200728DF6 /* grossini.png in Resources */ = {isa = PBXBuildFile; fileRef = 727FDE211244DE5200728DF6 /* grossini.png */; };
+		72969A11124A86ED00D03448 /* luagl1ext.c in Sources */ = {isa = PBXBuildFile; fileRef = 72969A0F124A86ED00D03448 /* luagl1ext.c */; };
 		871830A61208AC72002006FF /* copy-scripts.sh in Resources */ = {isa = PBXBuildFile; fileRef = 871830A51208AC72002006FF /* copy-scripts.sh */; };
 		875F27BF120721D400D00A5D /* wax_gc.m in Sources */ = {isa = PBXBuildFile; fileRef = 875F27BC120721D400D00A5D /* wax_gc.m */; };
 		875F27C0120721D400D00A5D /* wax_server.m in Sources */ = {isa = PBXBuildFile; fileRef = 875F27BE120721D400D00A5D /* wax_server.m */; };
@@ -762,6 +763,8 @@
 		727FDE1C1244DC9700728DF6 /* MyScene.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = MyScene.lua; sourceTree = "<group>"; };
 		727FDE201244DE5200728DF6 /* fps_images.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = fps_images.png; path = data/images/fps_images.png; sourceTree = "<group>"; };
 		727FDE211244DE5200728DF6 /* grossini.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = grossini.png; path = data/images/grossini.png; sourceTree = "<group>"; };
+		72969A0F124A86ED00D03448 /* luagl1ext.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = luagl1ext.c; sourceTree = "<group>"; };
+		72969A10124A86ED00D03448 /* luagl1ext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = luagl1ext.h; sourceTree = "<group>"; };
 		72B2D7101245264E005AEE4B /* CCXNodeUpdateProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCXNodeUpdateProtocol.h; sourceTree = "<group>"; };
 		871830A51208AC72002006FF /* copy-scripts.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = "copy-scripts.sh"; sourceTree = "<group>"; };
 		875F27BB120721D400D00A5D /* wax_gc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = wax_gc.h; sourceTree = "<group>"; };
@@ -1183,6 +1186,8 @@
 				727FDC421244D86D00728DF6 /* luagl_util.h */,
 				727FDC431244D86D00728DF6 /* luaglu.c */,
 				727FDC441244D86D00728DF6 /* luaglu.h */,
+				72969A0F124A86ED00D03448 /* luagl1ext.c */,
+				72969A10124A86ED00D03448 /* luagl1ext.h */,
 			);
 			path = luagles;
 			sourceTree = "<group>";
@@ -1879,6 +1884,7 @@
 				727FDC831244D86E00728DF6 /* udp.c in Sources */,
 				727FDC841244D86E00728DF6 /* unix.c in Sources */,
 				727FDC851244D86E00728DF6 /* usocket.c in Sources */,
+				72969A11124A86ED00D03448 /* luagl1ext.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
