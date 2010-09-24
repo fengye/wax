@@ -648,7 +648,7 @@ static int luagl_get(lua_State *L)
     glGetIntegerv(e, &mask);
     lua_pushinteger(L, mask);
     return 1;
-          
+
   case GL_DEPTH_RANGE:
   case GL_MAX_VIEWPORT_DIMS:
     size = 2;
@@ -1223,7 +1223,7 @@ static int luagl_push_matrix(lua_State *L)
 static int luagl_read_pixels(lua_State *L)
 {
   GLenum format;
-  GLfloat *pixels;
+  GLubyte *pixels;
   int width, height, size, depth=1;
 
   format = luagl_get_gl_enum(L, 5);
@@ -1235,12 +1235,12 @@ static int luagl_read_pixels(lua_State *L)
   height = luaL_checkinteger(L, 4);
   size = width*height*depth;
 
-  pixels = LUAGL_NEW_ARRAY(GLfloat, size);
+  pixels = LUAGL_NEW_ARRAY(GLubyte, size);
 
   glReadPixels(luaL_checkinteger(L, 1), luaL_checkinteger(L, 2),
-               width, height, format, GL_FLOAT, pixels);
+               width, height, format, GL_UNSIGNED_BYTE, pixels);
 
-  luagl_push_arrayf(L, pixels, size);
+  luagl_push_arrayuc(L, pixels, size);
 
   LUAGL_DELETE_ARRAY(pixels);
 

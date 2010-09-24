@@ -118,7 +118,7 @@ static int luagl1ext_delete_framebuffers(lua_State* L)
 }
 
 /* FramebufferTexture2DOES(gl.FRAMEBUFFER_OES, attachment, texture_target, 
-   texture) -> none */
+   texture, level) -> none */
 static int luagl1ext_framebuffer_texture2d(lua_State* L)
 {
     /* attach a texture to framebuffer object */
@@ -126,7 +126,7 @@ static int luagl1ext_framebuffer_texture2d(lua_State* L)
                               luagl1ext_get_gl_enum(L, 2), 
                               luagl_get_gl_enum(L, 3), 
                               luaL_checkinteger(L, 4), 
-                              0);
+                              luaL_checkinteger(L, 5));
     return 0;
 }
 
@@ -192,7 +192,7 @@ static int luagl1ext_get_renderbuffer_parameter(lua_State* L)
             lua_pushinteger(L, result);
             return 1;
         default:
-            luaL_argerror(L, 1, "unknown enumeration.");
+            luaL_argerror(L, 2, "unknown enumeration.");
             break;
     }
 	
@@ -203,7 +203,7 @@ static int luagl1ext_get_renderbuffer_parameter(lua_State* L)
 static int luagl1ext_check_framebuffer_status(lua_State* L)
 {
     GLenum status = glCheckFramebufferStatusOES(luagl1ext_get_gl_enum(L, 1));
-    luagl1ext_pushenum(L, status);
+    lua_pushinteger(L, (lua_Integer)status);
     return 1;
 }
 
@@ -241,6 +241,29 @@ static int luagl1ext_get(lua_State *L)
     return size;
 }
 
+/* GenCBuffer (length) -> userdata */
+static int luagl1ext_gen_c_buffer(lua_State* L)
+{
+    size_t length = (size_t)luaL_checkinteger(L, 1);
+    void* memblock = malloc(length);
+    lua_pushlightuserdata(L, memblock);
+    return 1;
+}
+
+/* DeleteCBuffer (userdata) -> none */
+static int luagl1ext_delete_c_buffer(lua_State* L)
+{
+    if (lua_islightuserdata(L, 1))
+    {
+    	free(lua_touserdata(L, 1));
+    }
+    else {
+        luaL_argerror(L, 1, "not light userdata.");
+    }
+
+    return 0;
+}
+
 /******************************************************************************/
 
 static const luaL_reg luagl1ext_lib[] = {
@@ -259,6 +282,10 @@ static const luaL_reg luagl1ext_lib[] = {
     {"CheckFramebufferStatusOES"				, luagl1ext_check_framebuffer_status},
     
     {"Get"										, luagl1ext_get					},
+    
+    // self-provided utility functions
+    {"GenCBuffer"								, luagl1ext_gen_c_buffer		},
+    {"DeleteCBuffer"							, luagl1ext_delete_c_buffer		},
     {NULL, NULL},
 };
 
