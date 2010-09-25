@@ -5,7 +5,7 @@ require "socket.ftp"
 module("customftploader", package.seeall)
 
 -- provide your own ftp server url here
-local ftpprefix = "ftp://ftpuser:ftpuser@localhost/devel/"
+local ftpprefix = "ftp://ftpuser:ftpuser@localhost/devel/FEMDemo/"
 
 local function load(modulename)
   local errmsg = ""
@@ -13,12 +13,12 @@ local function load(modulename)
   local modulepath = string.gsub(modulename, "%.", "/")
   for path in string.gmatch(package.path, "([^;]+)") do
     local filename = string.gsub(path, "%?", modulepath)
-    filename = ftpprefix .. filename
-    local f, e = socket.ftp.get(filename)
+    local fullfilename = ftpprefix .. filename
+    local f, e = socket.ftp.get(fullfilename)
     if e == nil then
-    	return assert(loadstring(f))
+    	return assert(loadstring(f, filename))
     end
-    errmsg = errmsg.."\n\tno file: "..filename.." (checked with custom ftp loader)"
+    errmsg = errmsg.."\n\tno file: "..fullfilename.." (checked with custom ftp loader)"
   end
   return errmsg
 end
