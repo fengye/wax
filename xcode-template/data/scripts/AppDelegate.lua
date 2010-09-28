@@ -40,7 +40,7 @@ function applicationDidFinishLaunching(self, application)
 -- Use RGBA_8888 buffers. Default is: RGB_565 buffers
   CCDirector:sharedDirector():setPixelFormat(kPixelFormatRGBA8)  
   
-  CCDirector:sharedDirector():setDeviceOrientation(CCDeviceOrientationPortrait)
+  --CCDirector:sharedDirector():setDeviceOrientation(CCDeviceOrientationPortrait)
   CCDirector:sharedDirector():setAnimationInterval(1.0/60)
 
   CCDirector:sharedDirector():setDisplayFPS(true)

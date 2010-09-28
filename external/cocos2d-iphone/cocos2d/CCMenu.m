@@ -106,6 +106,47 @@ enum {
 	return self;
 }
 
+- (id) initWithItemArray: (NSArray*)itemArray
+{
+    if( (self=[super init]) ) {
+        
+		self.isTouchEnabled = YES;
+		
+		// menu in the center of the screen
+		CGSize s = [[CCDirector sharedDirector] winSize];
+		
+		self.isRelativeAnchorPoint = NO;
+		anchorPoint_ = ccp(0.5f, 0.5f);
+		[self setContentSize:s];
+		
+		// XXX: in v0.7, winSize should return the visible size
+		// XXX: so the bar calculation should be done there
+		CGRect r = [[UIApplication sharedApplication] statusBarFrame];
+		ccDeviceOrientation orientation = [[CCDirector sharedDirector] deviceOrientation];
+		if( orientation == CCDeviceOrientationLandscapeLeft || orientation == CCDeviceOrientationLandscapeRight )
+			s.height -= r.size.width;
+		else
+			s.height -= r.size.height;
+		self.position = ccp(s.width/2, s.height/2);
+        
+		int z=0;
+		
+        for(int i = 0; i < [itemArray count]; ++i )
+        {
+            [self addChild:(CCNode*)([itemArray objectAtIndex:i]) z:z];
+            z++;
+        }
+        
+        //	[self alignItemsVertically];
+		
+		selectedItem = nil;
+		state = kMenuStateWaiting;
+	}
+	
+	return self;
+}
+
+
 -(void) dealloc
 {
 	[super dealloc];

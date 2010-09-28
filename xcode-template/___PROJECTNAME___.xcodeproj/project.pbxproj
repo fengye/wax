@@ -62,6 +62,10 @@
 		7236B6A81244FBB500EC60CA /* libcocos2d.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7236B6291244FB8B00EC60CA /* libcocos2d.a */; };
 		7236B6A91244FBB500EC60CA /* libCocosDenshion.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7236B62D1244FB8B00EC60CA /* libCocosDenshion.a */; };
 		7236B6AA1244FBB500EC60CA /* libFontLabel.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7236B6311244FB8B00EC60CA /* libFontLabel.a */; };
+		727E5FA01251AA4300EFA7B5 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 727E5F9F1251AA4300EFA7B5 /* AudioToolbox.framework */; };
+		727E5FA41251AA4600EFA7B5 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 727E5FA31251AA4600EFA7B5 /* AVFoundation.framework */; };
+		727E5FA81251AA4F00EFA7B5 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 727E5FA71251AA4F00EFA7B5 /* OpenAL.framework */; };
+		727E5FAC1251AA5300EFA7B5 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 727E5FAB1251AA5300EFA7B5 /* libz.dylib */; };
 		727FDC211244D79B00728DF6 /* customftploader.lua in Resources */ = {isa = PBXBuildFile; fileRef = 727FDC151244D79B00728DF6 /* customftploader.lua */; };
 		727FDC221244D79B00728DF6 /* ltn12.lua in Resources */ = {isa = PBXBuildFile; fileRef = 727FDC161244D79B00728DF6 /* ltn12.lua */; };
 		727FDC231244D79B00728DF6 /* mime.lua in Resources */ = {isa = PBXBuildFile; fileRef = 727FDC171244D79B00728DF6 /* mime.lua */; };
@@ -702,6 +706,10 @@
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		32CA4F630368D1EE00C91783 /* ___PROJECTNAMEASIDENTIFIER____Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "___PROJECTNAMEASIDENTIFIER____Prefix.pch"; sourceTree = "<group>"; };
 		7236B5A71244FB8A00EC60CA /* cocos2d-iphone.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "cocos2d-iphone.xcodeproj"; path = "external/cocos2d-iphone/cocos2d-iphone.xcodeproj"; sourceTree = "<group>"; };
+		727E5F9F1251AA4300EFA7B5 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		727E5FA31251AA4600EFA7B5 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		727E5FA71251AA4F00EFA7B5 /* OpenAL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenAL.framework; path = System/Library/Frameworks/OpenAL.framework; sourceTree = SDKROOT; };
+		727E5FAB1251AA5300EFA7B5 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		727FDC151244D79B00728DF6 /* customftploader.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = customftploader.lua; sourceTree = "<group>"; };
 		727FDC161244D79B00728DF6 /* ltn12.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ltn12.lua; sourceTree = "<group>"; };
 		727FDC171244D79B00728DF6 /* mime.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = mime.lua; sourceTree = "<group>"; };
@@ -790,6 +798,10 @@
 				0422EC721135DFE6007F6343 /* libxml2.dylib in Frameworks */,
 				727FDC2C1244D7BC00728DF6 /* OpenGLES.framework in Frameworks */,
 				727FDDA41244DA6C00728DF6 /* QuartzCore.framework in Frameworks */,
+				727E5FA01251AA4300EFA7B5 /* AudioToolbox.framework in Frameworks */,
+				727E5FA41251AA4600EFA7B5 /* AVFoundation.framework in Frameworks */,
+				727E5FA81251AA4F00EFA7B5 /* OpenAL.framework in Frameworks */,
+				727E5FAC1251AA5300EFA7B5 /* libz.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1043,6 +1055,10 @@
 				19C28FACFE9D520D11CA2CBB /* Products */,
 				727FDC2B1244D7BC00728DF6 /* OpenGLES.framework */,
 				727FDDA31244DA6C00728DF6 /* QuartzCore.framework */,
+				727E5F9F1251AA4300EFA7B5 /* AudioToolbox.framework */,
+				727E5FA31251AA4600EFA7B5 /* AVFoundation.framework */,
+				727E5FA71251AA4F00EFA7B5 /* OpenAL.framework */,
+				727E5FAB1251AA5300EFA7B5 /* libz.dylib */,
 			);
 			name = CustomTemplate;
 			sourceTree = "<group>";
@@ -1946,6 +1962,7 @@
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				OTHER_LDFLAGS = "-all_load";
 				PREBINDING = NO;
 				SDKROOT = iphoneos3.2;
 				USER_HEADER_SEARCH_PATHS = "./external/cocos2d-iphone/**";
@@ -1973,6 +1990,7 @@
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				OTHER_LDFLAGS = "-all_load";
 				PREBINDING = NO;
 				SDKROOT = iphoneos3.2;
 				USER_HEADER_SEARCH_PATHS = "./external/cocos2d-iphone/**";
@@ -1999,6 +2017,7 @@
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				OTHER_LDFLAGS = "-all_load";
 				PREBINDING = NO;
 				SDKROOT = iphoneos3.2;
 				USER_HEADER_SEARCH_PATHS = "./external/cocos2d-iphone/**";
@@ -2012,6 +2031,7 @@
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				OTHER_LDFLAGS = "-all_load";
 				PREBINDING = NO;
 				SDKROOT = iphoneos3.2;
 				USER_HEADER_SEARCH_PATHS = "./external/cocos2d-iphone/**";

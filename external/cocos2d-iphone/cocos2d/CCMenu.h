@@ -54,6 +54,10 @@ typedef enum  {
 /** initializes a CCMenu with it's items */
 - (id) initWithItems: (CCMenuItem*) item vaList: (va_list) args;
 
+/** initializes a CCMenu with items in an array. This is added for 
+ NSInvocation-based calling */
+- (id) initWithItemArray: (NSArray*)itemArray;
+
 /** align items vertically */
 -(void) alignItemsVertically;
 /** align items vertically with padding

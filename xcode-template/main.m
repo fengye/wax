@@ -22,14 +22,13 @@
 #import "luasocket.h"
 #import "mime.h"
 #import "luagl.h"
-#import "cocos2d.h"
+#import "luagl1ext.h"
 
 int main(int argc, char *argv[]) {
     NSAutoreleasePool * pool = [[NSAutoreleasePool alloc] init];
     
-	// make Obj-C runtime know CCDirector class before Wax initialized
-	[CCDirector class];
-    wax_startWithExtensions(luaopen_lfs, luaopen_socket_core, luaopen_mime_core, luaopen_luagl, 
+    wax_startWithExtensions(luaopen_lfs, luaopen_socket_core, luaopen_mime_core, 
+                            luaopen_luagl, luaopen_luagl1ext,
 							luaopen_wax_http, luaopen_wax_json, luaopen_wax_xml, nil);
     
     int retVal = UIApplicationMain(argc, argv, nil, @"AppDelegate");
